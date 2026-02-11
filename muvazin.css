@@ -1,0 +1,127 @@
+:root {
+    --okabe-black:           #000000;
+    --okabe-white:           #FFFFFF;
+    --okabe-teal:            #009E73;
+    --okabe-gold:            #E69F00;
+    --okabe-vermilion:       #D55E00;
+    --okabe-grey:            #F5F5F5;
+
+    --theme-color-canvas:             var(--okabe-white);
+    --theme-color-text-reading:       var(--okabe-black);
+
+    --theme-color-action-primary:     var(--okabe-teal);
+    --theme-color-action-focus:       var(--okabe-vermilion);
+
+    --theme-color-decoration-line:    var(--okabe-gold);
+    --theme-color-block-background:   var(--okabe-grey);
+}
+
+body {
+    background-color: var(--theme-color-canvas);
+    color: var(--theme-color-text-reading);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+a {
+    color: var(--theme-color-action-primary);
+    text-decoration-thickness: from-font;
+    text-underline-offset: 2px;
+}
+
+a:hover {
+    background-color: var(--theme-color-action-primary);
+    color: var(--theme-color-canvas);
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+a:focus {
+    outline: 3px solid var(--theme-color-action-focus);
+    outline-offset: 2px;
+}
+
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    background-color: var(--theme-color-action-primary);
+    color: var(--theme-color-canvas);
+    border: 2px solid var(--theme-color-action-primary);
+    font-weight: 600;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+    background-color: var(--theme-color-text-reading);
+    border-color: var(--theme-color-text-reading);
+    color: var(--theme-color-canvas);
+}
+
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+    outline: 3px solid var(--theme-color-action-focus);
+    outline-offset: 2px;
+}
+
+blockquote {
+    border-left: 8px solid var(--theme-color-decoration-line);
+    padding: 1rem;
+    margin-left: 0;
+    background-color: transparent;
+    font-style: italic;
+}
+
+hr {
+    border: none;
+    border-top: 4px solid var(--theme-color-decoration-line);
+    margin: 2.5rem 0;
+}
+
+pre {
+    background-color: var(--theme-color-block-background);
+    border-left: 4px solid var(--theme-color-text-reading);
+    border-radius: 0;
+}
+
+code {
+    background-color: var(--theme-color-block-background);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+table {
+    border-top: 2px solid var(--theme-color-text-reading);
+    border-bottom: 2px solid var(--theme-color-text-reading);
+}
+
+th {
+    border-bottom: 2px solid var(--theme-color-decoration-line);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    border: 2px solid var(--theme-color-text-reading);
+    background-color: var(--theme-color-canvas);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+    outline: 3px solid var(--theme-color-action-focus);
+    outline-offset: 2px;
+}
