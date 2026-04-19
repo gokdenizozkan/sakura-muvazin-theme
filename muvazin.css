@@ -38,36 +38,17 @@ a:hover {
     border-radius: 2px;
 }
 
-a:focus {
-    outline: 3px solid var(--theme-color-action-focus);
-    outline-offset: 2px;
-}
-
-button,
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
+:is(button, input[type="submit"], input[type="reset"], input[type="button"]) {
     background-color: var(--theme-color-action-primary);
     color: var(--theme-color-canvas);
     border: 2px solid var(--theme-color-action-primary);
     font-weight: 600;
 }
 
-button:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover,
-input[type="button"]:hover {
+:is(button, input[type="submit"], input[type="reset"], input[type="button"]):hover {
     background-color: var(--theme-color-text-reading);
     border-color: var(--theme-color-text-reading);
     color: var(--theme-color-canvas);
-}
-
-button:focus,
-input[type="submit"]:focus,
-input[type="reset"]:focus,
-input[type="button"]:focus {
-    outline: 3px solid var(--theme-color-action-focus);
-    outline-offset: 2px;
 }
 
 blockquote {
@@ -110,18 +91,52 @@ th {
     border-bottom: 2px solid var(--theme-color-decoration-line);
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-textarea {
+:is(th, td) {
+    border-bottom: 1px solid var(--theme-color-block-background);
+}
+
+:is(input[type="text"], input[type="email"], input[type="password"], textarea) {
     border: 2px solid var(--theme-color-text-reading);
     background-color: var(--theme-color-canvas);
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus,
-textarea:focus {
+:is(input[type="text"], input[type="email"], input[type="password"], textarea):focus-visible {
+    border-color: var(--theme-color-action-focus);
+}
+
+:is(a, button, input, textarea):focus-visible {
     outline: 3px solid var(--theme-color-action-focus);
     outline-offset: 2px;
+}
+
+::selection {
+    background-color: var(--theme-color-action-focus);
+    color: var(--theme-color-canvas);
+}
+
+a:visited {
+    color: var(--theme-color-action-primary);
+    text-decoration-style: double;
+    text-underline-offset: 3px;
+}
+
+a:visited:hover {
+    color: var(--theme-color-canvas);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --theme-color-canvas:           var(--okabe-black);
+        --theme-color-text-reading:     var(--okabe-white);
+        --theme-color-block-background: #1a1a1a;
+    }
 }
